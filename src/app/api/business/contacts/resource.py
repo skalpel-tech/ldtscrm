@@ -4,7 +4,7 @@ import uuid
 from flask import request
 from flask_restplus import Resource
 from api.restplus import api
-from api.business.contacts.models import contact, givenName
+from api.business.contacts.models import contact
 
 log = logging.getLogger(__name__)
 
@@ -16,6 +16,7 @@ contacts = {}
 class ContactCollection(Resource):
 
     @api.response(201, 'Contact successfully created.')
+    @api.response(400, 'Bad Data.')
     @api.expect(contact)
     @ns.marshal_with(contact, code=201)
     def post(self):
@@ -30,8 +31,9 @@ class ContactCollection(Resource):
 
 
 @ns.route('/<string:id>')
-@api.response(404, 'Category not found.')
-class CategoryItem(Resource):
+@api.response(200, 'Success.')
+@api.response(404, 'Contact not found.')
+class ContactItem(Resource):
 
     @api.marshal_with(contact)
     def get(self, id):
