@@ -38,6 +38,6 @@ class ContactItem(Resource):
     @api.marshal_with(contact)
     def get(self, id):
         """
-        Returns a category with a list of posts.
+        Returns a single contact by id.
         """
         return contacts[id], 200

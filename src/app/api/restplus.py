@@ -5,5 +5,5 @@ from config import settings
 
 log = logging.getLogger(__name__)
 
-api = Api(version='0.1', title='Skpcrm API',
-          description='SKP Crm api')
+api = Api(version='0.1', title='LTDS CRM API',
+          description='full open source crm api')
