@@ -19,25 +19,18 @@ Windows:
 
 Windows:
 ```
-cd src\app
-\skpcrm\src\app> pip install -r requirements.txt
+cd src
+\skpcrm> pip install -r requirements.txt
 ```
 Osx:
 ```
 TBD
 ```
 
-
-4. Set the FLASK_APP environment variable  
-
-Windows:
-```
-\skpcrm\src\app> set FLASK_APP=main.py
-```
-
-5. Run the application
+1. Run the application
 
 Windows:
 ```
+cd app
 \skpcrm\src\app>python main.py
 ```
