@@ -1,36 +1,60 @@
-# SkpCrm Python Flask Api
+# LTDS Crm Python Flask Api
+
+LTDS Crm is using python 3.7 see requirements.txt for information about dependencies.
+
+## Pre-requisite
+
+For development:
+* install [virutalenv](https://pypi.org/project/virtualenv/)
+* install [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/)
+Windows:
+* install [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)
+
+For mac osx user:
+get the path for virtualenvwrapper.sh
+```
+witch virtualenvwrapper.sh
+```
+set .profile_bass
+```
+$ cat >> ~/.bash_profile
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/directory-you-do-development-in
+source /usr/local/bin/
+^D
+```
 
 ## Instalation
 
 1. Create a virtual environment  
+```
+cd /skpcrm
+/skpcrm> mkvirtualenv skpcrm
+```
 
-Windows:
+2. Activate the environment  
 ```
-cd \skpcrm
-\skpcrm> mkvirtualenv skpcrm
+/skpcrm> activate
 ```
-2. Activate the environemt  
 
-Windows:
-```
-\skpcrm> activate
-```
 3. Install Application dependencies  
+```
+cd src/app
+/skpcrm/src/app> pip install -r requirements.txt
+```
 
-Windows:
-```
-cd src
-\skpcrm> pip install -r requirements.txt
-```
+4. Run the application
 Osx:
 ```
-TBD
+\skpcrm\src\app>python3 main.py
 ```
-
-1. Run the application
-
-Windows:
+Win:
 ```
-cd app
 \skpcrm\src\app>python main.py
 ```
+
+5. Browse to http://localhost:8888/api
+
+## Configuration
+
+Configuration can be changed in app/config/settings.py
