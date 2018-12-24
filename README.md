@@ -1,8 +1,8 @@
-# LDTS CRM
-Open Source Crm System
+# LDTS CRM API
 
-## LDTS CRM API
+Open Source CRM System
+Agile, Devops, Python, Elasticsearch, Logstash, Kibana, Cassandra
 
-### Installation
+## Installation
 
 [see Installation](/src/app/README.md)
