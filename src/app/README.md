@@ -15,11 +15,10 @@ get the path for virtualenvwrapper.sh
 ```
 witch virtualenvwrapper.sh
 ```
-set .profile_bass
+set .bash_profile
 ```
 $ cat >> ~/.bash_profile
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/directory-you-do-development-in
 source /usr/local/bin/
 ^D
 ```
