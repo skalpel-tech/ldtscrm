@@ -5,4 +5,4 @@ Open Source Crm System
 
 ### Installation
 
-[see Installation](/src/app/README.MD)
+[see Installation](/src/app/README.md)
