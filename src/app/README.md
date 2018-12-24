@@ -1,6 +1,6 @@
-# LTDS Crm Python Flask Api
+# LDTS Crm Python Flask Api
 
-LTDS Crm is using python 3.7 see requirements.txt for information about dependencies.
+LDTS Crm is using python 3.7 see requirements.txt for information about dependencies.
 
 ## Pre-requisite
 
@@ -13,7 +13,7 @@ Windows:
 For mac osx user:
 get the path for virtualenvwrapper.sh
 ```
-witch virtualenvwrapper.sh
+which virtualenvwrapper.sh
 ```
 set .bash_profile
 ```
