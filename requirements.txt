@@ -1,1 +1,2 @@
--r src/requirements.txt
+-r tasks/requirements.txt
+-r src/app/requirements.txt

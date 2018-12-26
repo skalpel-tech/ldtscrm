@@ -27,29 +27,23 @@ source /usr/local/bin/
 
 1. Create a virtual environment  
 ```
-cd /skpcrm
-/skpcrm> mkvirtualenv skpcrm
+cd /rootDirectory
+$ mkvirtualenv lstdcrm
 ```
 
 2. Activate the environment  
 ```
-/skpcrm> activate
+$ activate
 ```
 
 3. Install Application dependencies  
 ```
-cd src/app
-/skpcrm/src/app> pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 4. Run the application
-Osx:
 ```
-\skpcrm\src\app>python3 main.py
-```
-Win:
-```
-\skpcrm\src\app>python main.py
+$ invoke app.run
 ```
 
 5. Browse to http://localhost:8888/api

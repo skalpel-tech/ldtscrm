@@ -3,8 +3,8 @@ import uuid
 
 from flask import request
 from flask_restplus import Resource
-from api.restplus import api
-from api.business.contacts.models import contact
+from src.app.api.restplus import api
+from src.app.api.business.contacts.models import contact
 
 log = logging.getLogger(__name__)
 
