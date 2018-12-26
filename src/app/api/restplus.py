@@ -1,7 +1,6 @@
 import logging
 
 from flask_restplus import Api
-from src.app.config import settings
 
 log = logging.getLogger(__name__)
 
