@@ -17,29 +17,26 @@ logging.config.fileConfig(logging_conf_path)
 log = logging.getLogger(__name__)
 
 
-def create_app(flask_config_name=None, **kwargs):
-    """
-    Entry point to the Flask RESTful Server application
-    """
-    app = Flask(__name__, **kwargs)
-    logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'logging.conf'))
-    logging.config.fileConfig(logging_conf_path)
-    log = logging.getLogger(__name__)
-    initialize_app(app)
-    log.info('>>>>> Starting development server at http://{}/api/ <<<<<'.format(app.config['SERVER_NAME']))
-    return app
+def create_app(**kwargs):
+  """
+  Entry point to the Flask RESTful Server application
+  """
+  app = Flask(__name__, **kwargs)
+  initialize_app(app)
+  log.info('>>>>> Starting development server at http://%s/api/ <<<<<', app.config['SERVER_NAME'])
+  return app
 
 def configure_app(flask_app):
-    flask_app.config['SERVER_NAME'] = settings.FLASK_SERVER_NAME
-    flask_app.config['SWAGGER_UI_DOC_EXPANSION'] = settings.RESTPLUS_SWAGGER_UI_DOC_EXPANSION
-    flask_app.config['RESTPLUS_VALIDATE'] = settings.RESTPLUS_VALIDATE
-    flask_app.config['RESTPLUS_MASK_SWAGGER'] = settings.RESTPLUS_MASK_SWAGGER
-    flask_app.config['ERROR_404_HELP'] = settings.RESTPLUS_ERROR_404_HELP
+  flask_app.config['SERVER_NAME'] = settings.FLASK_SERVER_NAME
+  flask_app.config['SWAGGER_UI_DOC_EXPANSION'] = settings.RESTPLUS_SWAGGER_UI_DOC_EXPANSION
+  flask_app.config['RESTPLUS_VALIDATE'] = settings.RESTPLUS_VALIDATE
+  flask_app.config['RESTPLUS_MASK_SWAGGER'] = settings.RESTPLUS_MASK_SWAGGER
+  flask_app.config['ERROR_404_HELP'] = settings.RESTPLUS_ERROR_404_HELP
 
 def initialize_app(flask_app):
-    configure_app(flask_app)
-    log.info('initialize app')
-    blueprint = Blueprint('api', __name__, url_prefix='/api')
-    api.init_app(blueprint)
-    api.add_namespace(contact_namespace)
-    flask_app.register_blueprint(blueprint)
+  configure_app(flask_app)
+  log.info('initialize app')
+  blueprint = Blueprint('api', __name__, url_prefix='/api')
+  api.init_app(blueprint)
+  api.add_namespace(contact_namespace)
+  flask_app.register_blueprint(blueprint)

@@ -51,3 +51,17 @@ $ invoke app.run
 ## Configuration
 
 Configuration can be changed in app/config/settings.py
+
+## Pylint
+
+Install Pylint globally (make sure you are not working on your virtualenv)
+```
+$ pip install pylint
+```
+
+Execute the following cmd to lint the code:
+```
+$ pylint --disable=fixme src
+```
+
+Configuration is in the root folder.
