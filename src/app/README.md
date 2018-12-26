@@ -51,3 +51,12 @@ $ invoke app.run
 ## Configuration
 
 Configuration can be changed in app/config/settings.py
+
+## Pylint
+
+Execute the following cmd to lint the code:
+```
+$ pylint --disable=fixme src
+```
+
+Configuration is in the root folder.
