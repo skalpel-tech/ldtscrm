@@ -22,6 +22,7 @@ Folders:
 Files:
 
 * `README.md`
+* `.pylintrc` - Pylint configuration execute `pylint --disable=fixme src`
 * `.travis.yml` - [Travis CI](https://travis-ci.org/) (automated continuous
   integration) config for automated testing.
 * `.gitignore` - Lists files and file masks of the files which should not be
@@ -30,7 +31,7 @@ Files:
   given code with no limits.
 
 
-# Where to start reading the code
+### Where to start reading the code
 
 The easiest way to start the application is by using PyInvoke command `app.run`
 implemented in [`tasks/app/run.py`](tasks/app/run.py):
