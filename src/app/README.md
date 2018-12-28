@@ -1,10 +1,11 @@
 # LDTS Crm Python Flask Api
 
-LDTS Crm is using python 3.7 see requirements.txt for information about dependencies.
+LDTS Crm is using python 3.5 see requirements.txt for information about dependencies.
 
 ## Pre-requisite
 
 For development:
+* install [python 3.5](https://www.python.org/downloads/release/python-356/)
 * install [virutalenv](https://pypi.org/project/virtualenv/)
 * install [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/)
 Windows:
@@ -12,41 +13,49 @@ Windows:
 
 For mac osx user:
 get the path for virtualenvwrapper.sh
-```
+
+```bash
 which virtualenvwrapper.sh
 ```
+
 set .bash_profile
-```
+
+```bash
 $ cat >> ~/.bash_profile
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/
+export PROJECT_HOME=$HOME/Devel
+source [result of `which virtualenvwrapper.sh`]
 ^D
 ```
 
 ## Instalation
 
-1. Create a virtual environment  
-```
+Create a virtual environment  
+
+```cmd
 cd /rootDirectory
-$ mkvirtualenv lstdcrm
+mkvirtualenv lstdcrm
 ```
 
-2. Activate the environment  
-```
-$ activate
+Activate the environment for windows only
+
+```bash
+activate
 ```
 
-3. Install Application dependencies  
-```
-$ pip install -r requirements.txt
+Install Application dependencies  
+
+```bash
+pip install -r requirements.txt
 ```
 
-4. Run the application
-```
-$ invoke app.run
+Run the application
+
+```bash
+invoke app.run
 ```
 
-5. Browse to http://localhost:8888/api
+Browse to http://localhost:8888/api
 
 ## Configuration
 
@@ -55,13 +64,15 @@ Configuration can be changed in app/config/settings.py
 ## Pylint
 
 Install Pylint globally (make sure you are not working on your virtualenv)
-```
-$ pip install pylint
+
+```bash
+pip install pylint
 ```
 
 Execute the following cmd to lint the code:
-```
-$ pylint --disable=fixme src
+
+```bash
+pylint --disable=fixme src
 ```
 
 Configuration is in the root folder.
