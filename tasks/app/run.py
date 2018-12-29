@@ -12,8 +12,8 @@ def run(c):
     Run LTDS CRM RESTful API Server
     """
 
-    from src.app import create_app
-    from src.app.config import settings
+    from app import create_app
+    from app.config import settings
 
     app = create_app()
     return app.run(debug=settings.FLASK_DEBUG)

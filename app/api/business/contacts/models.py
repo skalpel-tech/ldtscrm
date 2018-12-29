@@ -1,5 +1,5 @@
 from flask_restplus import fields
-from src.app.api.restplus import api
+from app.api.restplus import api
 
 contact = api.model('Contact', {
 

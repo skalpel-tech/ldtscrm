@@ -6,10 +6,10 @@ import logging.config
 import os
 from flask import Flask, Blueprint
 
-from src.app.config import settings
-from src.app.api.restplus import api
+from app.config import settings
+from app.api.restplus import api
 
-from src.app.api.business.contacts.resource import ns as contact_namespace
+from app.api.business.contacts.resource import ns as contact_namespace
 
 
 logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'logging.conf'))
