@@ -16,7 +16,7 @@ Agile, Devops, Python, Elasticsearch, Logstash, Kibana, Cassandra
 
 Folders:
 
-* `src/app` - This RESTful API Server example implementation is here.
+* `app` - This RESTful API Server example implementation is here.
 * `tasks` - [PyInvoke](http://www.pyinvoke.org/) commands are implemented here.
 * `docs` - It contains just images for the README, so you can safely ignore it.
 
