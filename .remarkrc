@@ -1,0 +1,17 @@
+{
+  "plugins": {
+    "remark-lint": {
+      "blockquote-indentation": 2,
+      "emphasis-marker": "_",
+      "final-newline": true,
+      "first-heading-level": true,
+      "hard-break-spaces": true,
+      "heading-increment": true,
+      "list-item-indent": "space"
+    }
+  },
+  "settings": {
+    "commonmark": true,
+    "listItemIndent": "1"
+  }
+}
