@@ -55,7 +55,7 @@ Run the application
 invoke app.run
 ```
 
-Browse to http://localhost:8888/api
+Browse to `http://localhost:8888/api`
 
 ## Configuration
 
