@@ -31,12 +31,11 @@ Files:
 * `LICENSE` - Apache License, i.e. you are free to do whatever is needed with the
   given code with no limits.
 
-
 ### Where to start reading the code
 
 The easiest way to start the application is by using PyInvoke command `app.run`
 implemented in [`tasks/app/run.py`](tasks/app/run.py):
 
-```
-$ invoke app.run
+```bash
+invoke app.run
 ```

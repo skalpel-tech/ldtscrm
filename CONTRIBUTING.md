@@ -2,12 +2,12 @@
 
 LDTS CRM is an open source CRM project and we'd love to receive contributions from our community — you!
 
-### Fork and clone the repository
+## Fork and clone the repository
 
 You will need to fork the main Elasticsearch code or documentation repository and clone it to your local machine. See
 [github help page](https://help.github.com/articles/fork-a-repo) for help.
 
-### Submitting your changes
+## Submitting your changes
 
 Once your changes and tests are ready to submit for review:
 

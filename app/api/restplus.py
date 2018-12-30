@@ -1,3 +1,8 @@
+# encoding: utf-8
+"""
+Flask-RESTplus API registration module
+======================================
+"""
 import logging
 
 from flask_restplus import Api
