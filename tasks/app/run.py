@@ -8,6 +8,7 @@ from invoke import task
 
 @task(default=True)
 def run(c):
+    #pylint: disable=unused-argument
     """
     Run LTDS CRM RESTful API Server
     """
