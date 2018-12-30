@@ -23,7 +23,7 @@ Folders:
 Files:
 
 * `README.md`
-* `.pylintrc` - Pylint configuration execute `pylint --disable=fixme src`
+* `.pylintrc` - Pylint configuration execute `pylint --disable=fixme app`
 * `.travis.yml` - [Travis CI](https://travis-ci.org/) (automated continuous
   integration) config for automated testing.
 * `.gitignore` - Lists files and file masks of the files which should not be
