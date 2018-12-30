@@ -1,7 +1,5 @@
 # encoding: utf-8
 # pylint: disable=missing-docstring
-import pytest
-
 from app import create_app
 
 
