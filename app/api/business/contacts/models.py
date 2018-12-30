@@ -14,10 +14,10 @@ contact = api.model('Contact', {
         description='The unique identifier of a contact'),
     'suffix': fields.String(
         required=True, 
-        description='Suffix of a contact'),   
+        description='Suffix of a contact'),
     'title': fields.String(
         required=True, 
-        description='Title of a contact'),  
+        description='Title of a contact'),
     'last-name': fields.String(
         required=True, 
         description='The last name of the contact'),
@@ -28,13 +28,13 @@ contact = api.model('Contact', {
         required=True, 
         description='The first name of the contact object'),
     'full-name': fields.String(
-        required=True, 
-        description='The full name of the contact object'), 
+        required=True,
+        description='The full name of the contact object'),
     'description': fields.String(
         readOnly=True, 
         description='Description of a contact'),
     'city': fields.String(
-        readOnly=True, 
+        readOnly=True,
         description='City of contact address'),
     'country': fields.String(
         readOnly=True, 
