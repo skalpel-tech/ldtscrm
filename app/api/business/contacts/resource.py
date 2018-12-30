@@ -31,12 +31,12 @@ class ContactCollection(Resource):
         Creates a new contact.
         """
         data = api.payload
-        contactId = str(uuid.uuid4())
-        data['id'] = contactId
-        contacts[id] = data
-        return contacts[id], 201
+        contact_id = str(uuid.uuid4())
+        data['id'] = contact_id
+        contacts[contact_id] = data
+        return contacts[contact_id], 201
 
-@ns.route('/<string:id>')
+@ns.route('/<string:contact_id>')
 @api.response(200, 'Success.')
 @api.response(404, 'Contact not found.')
 class ContactItem(Resource):
@@ -44,8 +44,8 @@ class ContactItem(Resource):
     Manipulations with a specific contact.
     """
     @api.marshal_with(contact)
-    def get(self, contactId):
+    def get(self, contact_id):
         """
         Returns a single contact by id.
         """
-        return contacts[contactId], 200
+        return contacts[contact_id], 200

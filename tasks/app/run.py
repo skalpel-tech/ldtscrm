@@ -7,7 +7,7 @@ Application execution related tasks for Invoke.
 from invoke import task
 
 @task(default=True)
-def run():
+def run(c):
     """
     Run LTDS CRM RESTful API Server
     """
