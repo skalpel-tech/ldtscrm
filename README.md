@@ -8,7 +8,7 @@ Agile, Devops, Python, Elasticsearch, Logstash, Kibana, Cassandra
 
 ## Installation
 
-[see Installation](/src/app/README.md)
+[see Installation](/app/README.md)
 
 ## Project Structure
 
