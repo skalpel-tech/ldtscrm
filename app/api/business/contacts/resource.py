@@ -9,7 +9,8 @@ import uuid
 
 from flask_restplus import Resource
 from app.api.restplus import api
-from app.api.business.contacts.models import contact
+from app.api.business.contacts.models import Contact
+from app.api.business.contacts.schemas import contactSchema
 
 log = logging.getLogger(__name__)
 
@@ -24,8 +25,8 @@ class ContactCollection(Resource):
     """
     @api.response(201, 'Contact successfully created.')
     @api.response(400, 'Bad Data.')
-    @api.expect(contact)
-    @ns.marshal_with(contact, code=201)
+    @api.expect(contactSchema)
+    @ns.marshal_with(contactSchema, code=201)
     def post(self):
         """
         Creates a new contact.
@@ -43,7 +44,7 @@ class ContactItem(Resource):
     """
     Manipulations with a specific contact.
     """
-    @api.marshal_with(contact)
+    @api.marshal_with(contactSchema)
     def get(self, contact_id):
         """
         Returns a single contact by id.

@@ -23,6 +23,9 @@ def create_app(**kwargs):
     """
     app = Flask(__name__, **kwargs)
     initialize_app(app)
+    app.config.from_object(settings)
+    from . import extensions
+    extensions.init_app(app)
     log.info('>>>>> Starting development server at http://%s/api/ <<<<<', app.config['SERVER_NAME'])
     return app
 

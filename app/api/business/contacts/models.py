@@ -1,56 +1,69 @@
 # encoding: utf-8
-# encoding: utf-8
 """
-Contact Models
+User database models
 --------------------
 """
-from flask_restplus import fields
-from app.api.restplus import api
+import enum
 
-contact = api.model('Contact', {
+from sqlalchemy_utils import types as column_types, Timestamp
 
-    'id': fields.String(
-        readOnly=True,
-        description='The unique identifier of a contact'),
-    'suffix': fields.String(
-        required=True,
-        description='Suffix of a contact'),
-    'title': fields.String(
-        required=True,
-        description='Title of a contact'),
-    'last-name': fields.String(
-        required=True,
-        description='The last name of the contact'),
-    'middle-names': fields.String(
-        required=True,
-        description='The middle name(s) of the contact'),
-    'first-name': fields.String(
-        required=True,
-        description='The first name of the contact object'),
-    'full-name': fields.String(
-        required=True,
-        description='The full name of the contact object'),
-    'description': fields.String(
-        readOnly=True,
-        description='Description of a contact'),
-    'city': fields.String(
-        readOnly=True,
-        description='City of contact address'),
-    'country': fields.String(
-        readOnly=True,
-        description='Country of contact address'),
-    'region': fields.String(
-        readOnly=True,
-        description='Region of contact address(e.g. State, Province, Territory, Region, District)'
-        ),
-    'street': fields.String(
-        readOnly=True,
-        description='Street of contact address'),
-    'postal-code': fields.String(
-        readOnly=True,
-        description='Postal Code of contact address'),
-    'alternate-address': fields.String(
-        readOnly=True,
-        description='Alternate address details of a contact, compound form')
+from app.extensions import db
 
-})
+class Contact(db.Model, Timestamp):
+    """
+    User database model.
+    """
+
+    id = db.Column(db.Integer, primary_key=True) # pylint: disable=invalid-name
+    suffix = db.Column(
+        db.String(length=30), 
+        default='', 
+        nullable=False)
+    title = db.Column(
+        db.String(length=120), 
+        default='', 
+        nullable=False)
+    last_name = db.Column(
+        db.String(length=30), 
+        default='', 
+        nullable=False)
+    middle_names  = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
+    first_name = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
+    full_name = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
+    description = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
+    city = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
+    country = db.Column(
+        db.String(120), 
+        default='', 
+        nullable=False)
+    region = db.Column(
+        db.String(120), 
+        default='', 
+        nullable=False)
+    street = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
+    postal_code = db.Column(
+        db.String(30), 
+        default='', 
+        nullable=False)
+    alternate_address = db.Column(
+        db.String(), 
+        default='', 
+        nullable=False)
