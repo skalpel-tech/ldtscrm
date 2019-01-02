@@ -8,7 +8,7 @@ Agile, Devops, Python, Elasticsearch, Logstash, Kibana, Cassandra
 
 ## Installation
 
-[see Installation](/src/app/README.md)
+[see Installation](/app/README.md)
 
 ## Project Structure
 
@@ -23,11 +23,12 @@ Folders:
 Files:
 
 * `README.md`
-* `.pylintrc` - Pylint configuration execute `pylint --disable=fixme src`
+* `.pylintrc` - Pylint configuration execute `pylint --disable=fixme app`
 * `.travis.yml` - [Travis CI](https://travis-ci.org/) (automated continuous
   integration) config for automated testing.
 * `.gitignore` - Lists files and file masks of the files which should not be
   added to git repository.
+* `config.py` - Configuration file of the LDTS CRM Restful api.
 * `LICENSE` - Apache License, i.e. you are free to do whatever is needed with the
   given code with no limits.
 
@@ -39,3 +40,5 @@ implemented in [`tasks/app/run.py`](tasks/app/run.py):
 ```bash
 invoke app.run
 ```
+
+## Configuration
