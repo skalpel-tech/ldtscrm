@@ -41,8 +41,8 @@ def configure_app(app, flask_config_name=None):
     elif flask_config_name is None:
         flask_config_name = env_flask_config_name
     else:
-        if env_flask_config_name:
-            assert env_flask_config_name == flask_config_name, (
+        if env_flask_config_name and env_flask_config_name != flask_config_name:
+            raise ValueError(
                 "FLASK_CONFIG environment variable (\"%s\") and flask_config_name argument "
                 "(\"%s\") are both set and are not the same." % (
                     env_flask_config_name,
