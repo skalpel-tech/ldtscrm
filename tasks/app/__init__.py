@@ -8,5 +8,5 @@ from invoke import Collection
 from . import run
 
 namespace = Collection(
-    run
+    run,
 )
