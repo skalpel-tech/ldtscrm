@@ -8,7 +8,67 @@ Agile, Devops, Python, Elasticsearch, Logstash, Kibana, Cassandra
 
 ## Installation
 
-[see Installation](/app/README.md)
+LDTS Crm is using python 3.5 see requirements.txt for information about dependencies.
+
+### Pre-requisite
+
+For development:
+* install [python 3.5](https://www.python.org/downloads/release/python-356/)
+* install [virutalenv](https://pypi.org/project/virtualenv/)
+* install [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/)
+Windows:
+* install [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)
+
+For osx user:
+get the path for virtualenvwrapper.sh
+
+```bash
+which virtualenvwrapper.sh
+```
+
+set .bash_profile
+
+```bash
+$ cat >> ~/.bash_profile
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source [result of `which virtualenvwrapper.sh`]
+^D
+```
+
+### Instructions
+
+Create a virtual environment  
+
+```bash
+mkvirtualenv lstdcrm
+```
+
+Activate the environment for windows only
+
+```bash
+activate
+```
+
+Install Application dependencies  
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a local configuration `local_config.py`, you can copy the `local_config.py.template`
+
+Run the application
+
+```bash
+invoke app.run
+```
+
+Browse to `http://localhost:8888/api`
+
+## Configuration
+
+Configuration can be changed in `config.py`
 
 ## Project Structure
 
@@ -31,6 +91,7 @@ Files:
 * `config.py` - Configuration file of the LDTS CRM Restful api.
 * `LICENSE` - Apache License, i.e. you are free to do whatever is needed with the
   given code with no limits.
+* `local_config.py.template` - Example of local configuration, create a local_config.py to set your application
 
 ### Where to start reading the code
 

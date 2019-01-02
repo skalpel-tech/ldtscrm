@@ -19,6 +19,12 @@ class BaseConfig(object):
     #     port=DB_PORT,
     #     name=DB_NAME,
     # )
+    
+    # RESTPLUS configuration
+    RESTPLUS_SWAGGER_UI_DOC_EXPANSION = 'list'
+    RESTPLUS_VALIDATE = True
+    RESTPLUS_MASK_SWAGGER = False
+    RESTPLUS_ERROR_404_HELP = False
 
     # SQLITE
     SQLALCHEMY_DATABASE_URI = 'sqlite:///%s' % (os.path.join(PROJECT_ROOT, "example.db"))
