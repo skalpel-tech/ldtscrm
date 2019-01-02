@@ -5,9 +5,8 @@ Application related tasks for Invoke.
 
 from invoke import Collection
 
-from . import run, dependencies
+from . import run
 
 namespace = Collection(
-    run,
-    dependencies,
+    run
 )
