@@ -19,7 +19,7 @@ class BaseConfig(object):
     #     port=DB_PORT,
     #     name=DB_NAME,
     # )
-    
+
     # RESTPLUS configuration
     RESTPLUS_SWAGGER_UI_DOC_EXPANSION = 'list'
     RESTPLUS_VALIDATE = True
