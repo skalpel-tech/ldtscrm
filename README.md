@@ -14,27 +14,27 @@ Distributed and Highly Available CRM system:
 * Machine learning detects anomalies while alerts are sent out to key team members to proactively address availability issues.
 
 Robust Backend Technology 
-* Agile and Devops methodology adherence 
-* Github repository integration with conitnuous integration, code coverage and code quality tools
-* Best practices in Python as well as Object oriented software design principles that promote code reuse
-* PostgreSQL relational database known for performance and robustness 
-* Elastic Stack analytical and visualizational tools
+* Agile and Devops methodology adherence.
+* Github repository integration with conitnuous integration, code coverage and code quality tools.
+* Best practices in Python as well as Object oriented software design principles that promote code reuse.
+* PostgreSQL relational database known for performance and robustness.
+* Elastic Stack analytical and visualizational tools.
 
 Full CRM software suite adhering industry best practices
-* Contact Manageemnt, Sales and Leads Management, Marketing Campaign Management 
-* Data analytics and in-depth insights into Customer Experience survey feedback
-* Call Center with flexible APIs for custom CTI Integration  
+* Contact Manageemnt, Sales and Leads Management, Customer Sevice, Service Management, & Marketing Campaign Management modules.
+* Data analytics and in-depth insights into Customer Experience survey feedback.
+* Call Center with flexible APIs for custom CTI Integration.
 * HTML5 Web full browser compatibility (Firefox, Chrome, Brave,...)
-* Mobility
+* Mobility.
 
 Leverages the best analytics tools to search and visualize your data: 
-* Elasticsearch & Logstash for search 
-* Kibana for visualization and data analytics
+* Elasticsearch & Logstash for search.
+* Kibana for visualization and data analytics.
 
 Flexible and performant UI & Front End:
-* The latest and grestest in UX design principles and user research will be in our UI
-* Highly customizable and extensible UI, with default templates and extensive user personalization capabilities 
-* Completely decoupled UI from CRM backend which allows anyone to swap our UI for their UI through our API
+* The latest and grestest in UX design principles and user research will be in our UI.
+* Highly customizable and extensible UI, with default templates and extensive user personalization capabilities.
+* Completely decoupled UI from CRM backend which allows anyone to swap our UI for their UI through our API.
 
 Being completely API driven. The system will provide:
 * HTTP RESTful API
