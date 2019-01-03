@@ -7,9 +7,12 @@ RESTful API Contacts resources
 import logging
 import uuid
 
+from flask import request
 from flask_restplus import Resource
 from app.api.restplus import api
-from app.api.business.contacts.models import contact
+from app.api.business.contacts.schemas import contactSchema
+from .services import create_contact, get_contact_by_id
+from app.extensions import db
 
 log = logging.getLogger(__name__)
 
@@ -24,17 +27,14 @@ class ContactCollection(Resource):
     """
     @api.response(201, 'Contact successfully created.')
     @api.response(400, 'Bad Data.')
-    @api.expect(contact)
-    @ns.marshal_with(contact, code=201)
+    @api.expect(contactSchema)
+    @ns.marshal_with(contactSchema, code=201)
     def post(self):
         """
         Creates a new contact.
-        """
-        data = api.payload
-        contact_id = str(uuid.uuid4())
-        data['id'] = contact_id
-        contacts[contact_id] = data
-        return contacts[contact_id], 201
+        """    
+        new_contact = create_contact(request.json)
+        return new_contact, 201
 
 @ns.route('/<string:contact_id>')
 @api.response(200, 'Success.')
@@ -43,9 +43,9 @@ class ContactItem(Resource):
     """
     Manipulations with a specific contact.
     """
-    @api.marshal_with(contact)
+    @api.marshal_with(contactSchema)
     def get(self, contact_id):
         """
         Returns a single contact by id.
         """
-        return contacts[contact_id], 200
+        return get_contact_by_id(contact_id), 200
