@@ -26,7 +26,7 @@ Full CRM software suite adhering to industry best practices:
 * Contact Manageemnt, Sales and Leads Management, Customer Sevice, Service Management, & Marketing Campaign Management modules.
 * Data analytics and in-depth insights into Customer Experience survey feedback.
 * Call Center with flexible APIs for custom CTI Integration.
-* HTML5 Web full browser compatibility (Firefox, Chrome, Brave,...)
+* HTML5 Web full browser compatibility (Firefox, Chrome, Brave.)
 * Mobility.
 
 Leverages the best analytics tools to search and visualize your data:
@@ -39,7 +39,7 @@ Flexible and performant UI & Front End:
 * Completely decoupled UI from CRM backend which allows anyone to swap our UI for their UI through our API.
 
 Being completely API driven. The system will provide:
-* HTTP RESTful API
+* HTTP RESTful API.
 * All APIs perform automatic node operation rerouting.
 
 ## Installation
