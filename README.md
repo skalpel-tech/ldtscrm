@@ -3,44 +3,13 @@
 [![Build Status](https://travis-ci.org/skalpel-tech/ldtscrm.svg?branch=master)](https://travis-ci.org/skalpel-tech/ldtscrm)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd69f740d0d144a79d2cccb023096261)](https://app.codacy.com/app/cedar-technologies/ldtscrm?utm_source=github.com&utm_medium=referral&utm_content=skalpel-tech/ldtscrm&utm_campaign=Badge_Grade_Settings)
 
-Our vision: 
-
-LTDS CRM is a distributed, RESTful Open Source CRM System that will be API driven. LDTS CRM will allow you to collect, analyze and gain insight into the most important information about your customers with modern, powerful and incredibly robust software. 
-Our team members and contributors adhere to strict Agile and Devops Engineering methodologies which ensure code quality and efficiency. 
+LTDS CRM API is a distributed, RESTful Open Source CRM System API driven. LDTS CRM allows you to collect, analyze and gain insight into the most important information about your customers with modern, powerful and incredibly robust software.
+Our team members and contributors adhere to strict Agile and Devops Engineering methodologies which ensure code quality and efficiency.
 
 Features include:
 
-A distributed and Highly Available CRM system:
-* Ensure scalability with the best in search, virtualization, hot warm architecture, cluster flocking and containerization technology.
-* All data is indexed and Read / Search operations are performed in Elasticsearch, not on DB, to guarantee high system performance.
-* Machine learning detects anomalies while alerts are sent out to key team members to proactively address availability issues.
-
-Robust Backend Technology: 
-* Agile and Devops methodology adherence.
-* Github repository integration with conitnuous integration, code coverage and code quality tools.
-* Best practices in Python as well as Object oriented software design principles that promote code reuse.
-* PostgreSQL relational database known for performance and robustness.
-* Elastic Stack analytical and visualizational tools.
-
-Full CRM software suite adhering to industry best practices:
-* Contact Manageemnt, Sales and Leads Management, Customer Sevice, Service Management, & Marketing Campaign Management modules.
-* Data analytics and in-depth insights into Customer Experience survey feedback.
-* Call Center with flexible APIs for custom CTI Integration.
-* HTML5 Web full browser compatibility (Firefox, Chrome, Brave.)
-* Mobility.
-
-Leverages the best analytics tools to search and visualize your data:
-* Elasticsearch & Logstash for search.
-* Kibana for visualization and data analytics.
-
-Flexible and performant UI & Front End:
-* The latest and grestest in User Experience design principles and user research will be in our UI.
-* Highly customizable and extensible UI, with default templates and extensive user personalization capabilities.
-* Completely decoupled UI from CRM backend which allows anyone to swap our UI for their UI through our API.
-
-Being completely API driven. The system will provide:
-* HTTP RESTful API.
-* All APIs perform automatic node operation rerouting.
+* Various Set of Restful APIs.
+  * Contact Management modules.
 
 ## Installation
 
