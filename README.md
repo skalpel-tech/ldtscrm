@@ -114,3 +114,5 @@ invoke app.run
 ```
 
 ## Configuration
+
+look at `config.py`
