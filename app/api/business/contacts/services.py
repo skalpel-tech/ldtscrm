@@ -34,5 +34,5 @@ def create_contact(data):
         db.session.add(new_contact)
     return new_contact
 
-def get_contact_by_id(id):
-    return Contact.query.get(id)
+def get_contact_by_id(contact_id):
+    return Contact.query.get(contact_id)

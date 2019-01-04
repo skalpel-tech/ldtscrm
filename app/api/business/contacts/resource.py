@@ -10,9 +10,8 @@ import uuid
 from flask import request
 from flask_restplus import Resource
 from app.api.restplus import api
-from app.api.business.contacts.schemas import contactSchema
+from .schemas import contactSchema
 from .services import create_contact, get_contact_by_id
-from app.extensions import db
 
 log = logging.getLogger(__name__)
 
