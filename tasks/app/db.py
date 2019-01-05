@@ -29,12 +29,12 @@ else:
         """
         Custom config that overwrites template directory.
         """
-        def get_template_directory(self):
+        def get_template_directory(self): #pylint: disable=R0201
             package_dir = os.path.abspath(os.path.dirname(__file__))
             return os.path.join(package_dir, 'db_templates')
 
 
-def _get_config(directory, x_arg=None, opts=None): #pylint: disable=R0201
+def _get_config(directory, x_arg=None, opts=None): 
     """
     A helper that prepares AlembicConfig instance.
     """
