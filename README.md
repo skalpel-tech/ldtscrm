@@ -92,7 +92,13 @@ Install Application dependencies
 pip install -r requirements.txt
 ```
 
-Create a local configuration `local_config.py`, you can copy the `local_config.py.template`
+Create a local configuration `local_config.py`, you can copy the `local_config.py.template` and set up your database connection
+
+Upgrad the database to current version
+
+```bash
+invoke app.db.upgrade
+```
 
 Run the application
 
