@@ -1,56 +1,92 @@
 # encoding: utf-8
-# encoding: utf-8
 """
-Contact Models
+Contact database models
 --------------------
 """
-from flask_restplus import fields
-from app.api.restplus import api
+import uuid
 
-contact = api.model('Contact', {
+from sqlalchemy_utils import Timestamp
+from sqlalchemy.dialects.postgresql import UUID
 
-    'id': fields.String(
-        readOnly=True,
-        description='The unique identifier of a contact'),
-    'suffix': fields.String(
-        required=True,
-        description='Suffix of a contact'),
-    'title': fields.String(
-        required=True,
-        description='Title of a contact'),
-    'last-name': fields.String(
-        required=True,
-        description='The last name of the contact'),
-    'middle-names': fields.String(
-        required=True,
-        description='The middle name(s) of the contact'),
-    'first-name': fields.String(
-        required=True,
-        description='The first name of the contact object'),
-    'full-name': fields.String(
-        required=True,
-        description='The full name of the contact object'),
-    'description': fields.String(
-        readOnly=True,
-        description='Description of a contact'),
-    'city': fields.String(
-        readOnly=True,
-        description='City of contact address'),
-    'country': fields.String(
-        readOnly=True,
-        description='Country of contact address'),
-    'region': fields.String(
-        readOnly=True,
-        description='Region of contact address(e.g. State, Province, Territory, Region, District)'
-        ),
-    'street': fields.String(
-        readOnly=True,
-        description='Street of contact address'),
-    'postal-code': fields.String(
-        readOnly=True,
-        description='Postal Code of contact address'),
-    'alternate-address': fields.String(
-        readOnly=True,
-        description='Alternate address details of a contact, compound form')
+from app.extensions import db
 
-})
+class Contact(db.Model, Timestamp):
+    """
+    Contact database model.
+    """
+
+    # pylint: disable=too-many-instance-attributes
+    # 13 is reasonable in this model.
+
+    id = db.Column(
+        UUID(as_uuid=True),
+        unique=True,
+        nullable=False,
+        primary_key=True) # pylint: disable=invalid-name
+    suffix = db.Column(
+        db.String(length=80),
+        default='',
+        nullable=False)
+    title = db.Column(
+        db.String(length=80),
+        default='',
+        nullable=False)
+    last_name = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    middle_names = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    first_name = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    full_name = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    description = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    city = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    country = db.Column(
+        db.String(length=120),
+        default='',
+        nullable=False)
+    region = db.Column(
+        db.String(length=120),
+        default='',
+        nullable=False)
+    street = db.Column(
+        db.String(),
+        default='',
+        nullable=False)
+    postal_code = db.Column(
+        db.String(length=80),
+        default='',
+        nullable=False)
+
+    def __init__(self, **kwargs):
+        valid_keys = [
+            "suffix",
+            "title",
+            "last_name",
+            "middle_names",
+            "first_name",
+            "description",
+            "landline",
+            "city",
+            "country",
+            "region",
+            "street",
+            "postal_code"]
+        self.id = str(uuid.uuid4())
+        for key in valid_keys:
+            self.__dict__[key] = kwargs.get(key)
+        self.full_name = "%s %s %s" % (self.first_name, self.middle_names, self.last_name)
