@@ -34,7 +34,7 @@ else:
             return os.path.join(package_dir, 'db_templates')
 
 
-def _get_config(directory, x_arg=None, opts=None): 
+def _get_config(directory, x_arg=None, opts=None):
     """
     A helper that prepares AlembicConfig instance.
     """
