@@ -5,7 +5,6 @@ RESTful API Contacts resources
 ==============================
 """
 import logging
-import uuid
 
 from flask import request
 from flask_restplus import Resource
@@ -31,7 +30,7 @@ class ContactCollection(Resource):
     def post(self):
         """
         Creates a new contact.
-        """    
+        """
         new_contact = create_contact(request.json)
         return new_contact, 201
 

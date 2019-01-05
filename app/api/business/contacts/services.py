@@ -3,8 +3,9 @@
 Contact Services
 --------------------
 """
-from .models import Contact
+
 from app.extensions import db
+from .models import Contact
 
 def create_contact(data):
     suffix = data.get('suffix')
@@ -19,16 +20,16 @@ def create_contact(data):
     street = data.get('street')
     postal_code = data.get('postal_code')
     new_contact = Contact(
-        suffix, 
-        title, 
-        last_name, 
-        middle_names, 
-        first_name, 
-        description, 
-        city, 
-        country, 
-        region, 
-        street, 
+        suffix,
+        title,
+        last_name,
+        middle_names,
+        first_name,
+        description,
+        city,
+        country,
+        region,
+        street,
         postal_code)
     with db.session.begin():
         db.session.add(new_contact)

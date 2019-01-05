@@ -69,8 +69,8 @@ class Contact(db.Model, Timestamp):
         nullable=False)
 
     def __init__(
-        self, 
-        suffix, 
+        self,
+        suffix,
         title,
         last_name,
         middle_names,
@@ -82,7 +82,7 @@ class Contact(db.Model, Timestamp):
         street,
         postal_code):
         self.id = str(uuid.uuid4())
-        self.suffix = suffix 
+        self.suffix = suffix
         self.title = title
         self.last_name = last_name
         self.middle_names = middle_names
