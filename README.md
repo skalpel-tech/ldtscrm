@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/skalpel-tech/ldtscrm.svg?branch=master)](https://travis-ci.org/skalpel-tech/ldtscrm)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd69f740d0d144a79d2cccb023096261)](https://app.codacy.com/app/cedar-technologies/ldtscrm?utm_source=github.com&utm_medium=referral&utm_content=skalpel-tech/ldtscrm&utm_campaign=Badge_Grade_Settings)
+[<img src="https://img.shields.io/badge/slack-ldtscrmapi-%2370ccdc.svg?logo=slack">](https://skalpel.slack.com/messages/CF75MFVB4/)
 
 LTDS CRM API is a distributed, RESTful Open Source CRM System API driven. LDTS CRM allows you to collect, analyze and gain insight into the most important information about your customers with modern, powerful and incredibly robust software.
 Our team members and contributors adhere to strict Agile and Devops Engineering methodologies which ensure code quality and efficiency.
