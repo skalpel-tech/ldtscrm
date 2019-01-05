@@ -1,0 +1,51 @@
+# Design
+
+## Main concept
+
+This application will contain REST API backend only.
+All external tools and UI will be introduced in an external repos
+
+### Contacts module & Leads module
+Graph model to be used to store information about contacts/leads. Where node will be called Entity and relation would still use the same name
+
+Each entity would belong to one of EntityTypes that is a schema for entity validation. Some default entity types should be created. 
+
+#### Proposed data structure
+
+    EntityType:
+
+        * id - entity type id
+        * schema - JSON schema to be used for entity metadata validation
+
+    Entity: 
+
+        * id - some machine uuid
+        * typeId - entity type used for validation
+        * name - human readable entity id
+        * metaData - JSON representing
+
+    EntityAudit:
+
+        * entityId
+        * action - CRUD
+        * origialMeta
+
+    RelationType:
+
+        * id - Relation type id
+        * schema - JSON schema to be used for Relation metadata validation
+
+    Relation: 
+
+        * id - some machine uuid
+        * typeId - Relation type used for validation
+        * name - human readable Relation id
+        * metaData - JSON representing
+
+    RelationAudit:
+
+        * RelationId
+        * action - CRUD
+        * origialMeta
+
+## Code structire
