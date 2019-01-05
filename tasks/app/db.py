@@ -34,14 +34,14 @@ else:
             return os.path.join(package_dir, 'db_templates')
 
 
-def _get_config(directory, x_arg=None, opts=None):
+def _get_config(directory, x_arg=None, opts=None): #pylint: disable=R0201
     """
     A helper that prepares AlembicConfig instance.
     """
     config = Config(os.path.join(directory, 'alembic.ini'))
     config.set_main_option('script_location', directory)
     if config.cmd_opts is None:
-        config.cmd_opts = argparse.Namespace()
+        config.cmd_opts = argparse.Namespace() # pylint: disable=W0201
     for opt in opts or []:
         setattr(config.cmd_opts, opt, True)
     if x_arg is not None:
@@ -61,7 +61,7 @@ def init(context, directory='migrations', multidb=False):
     """Generates a new migration"""
     config = Config()
     config.set_main_option('script_location', directory)
-    config.config_file_name = os.path.join(directory, 'alembic.ini')
+    config.config_file_name = os.path.join(directory, 'alembic.ini') # pylint: disable=W0201
     if multidb:
         command.init(config, directory, 'flask-multidb')
     else:
