@@ -5,8 +5,9 @@ Application related tasks for Invoke.
 
 from invoke import Collection
 
-from . import run
+from . import run, db
 
 namespace = Collection(
     run,
+    db,
 )
