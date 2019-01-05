@@ -14,6 +14,10 @@ class Contact(db.Model, Timestamp):
     """
     Contact database model.
     """
+
+    # pylint: disable=too-many-instance-attributes
+    # 13 is reasonable in this model.
+
     id = db.Column(
         UUID(as_uuid=True),
         unique=True,
@@ -68,29 +72,21 @@ class Contact(db.Model, Timestamp):
         default='',
         nullable=False)
 
-    def __init__(
-        self,
-        suffix,
-        title,
-        last_name,
-        middle_names,
-        first_name,
-        description,
-        city,
-        country,
-        region,
-        street,
-        postal_code):
+    def __init__(self, **kwargs):
+        valid_keys = [
+            "suffix",
+            "title",
+            "last_name",
+            "middle_names",
+            "first_name",
+            "description",
+            "landline",
+            "city",
+            "country",
+            "region",
+            "street",
+            "postal_code"]
         self.id = str(uuid.uuid4())
-        self.suffix = suffix
-        self.title = title
-        self.last_name = last_name
-        self.middle_names = middle_names
-        self.first_name = first_name
-        self.full_name = "%s %s %s" % (first_name, middle_names, last_name)
-        self.description = description
-        self.city = city
-        self.country = country
-        self.region = region
-        self.street = street
-        self.postal_code = postal_code
+        for key in valid_keys:
+            self.__dict__[key] = kwargs.get(key)
+        self.full_name = "%s %s %s" % (self.first_name, self.middle_names, self.last_name)

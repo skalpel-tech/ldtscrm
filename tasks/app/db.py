@@ -81,7 +81,7 @@ def init(context, directory='migrations', multidb=False):
         'directory': "migration script directory",
     }
 )
-def revision(context, directory='migrations', message=None, autogenerate=False, sql=False,
+def add_revision(context, directory='migrations', message=None, autogenerate=False, sql=False,
              head='head', splice=False, branch_label=None, version_path=None, rev_id=None):
     """Create a new revision file."""
     config = _get_config(directory)
