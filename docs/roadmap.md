@@ -2,8 +2,11 @@
 
 ## Current Feature list
 ### In development
-* Contacts module 
-* Leads module
+* Entity modue
+    * Contact Feature
+    * Lead Feature
+    * Opportunity Feature
+    * Account Feature
 * Rest API
 
 

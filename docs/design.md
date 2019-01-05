@@ -5,7 +5,14 @@
 This application will contain REST API backend only.
 All external tools and UI will be introduced in an external repos
 
-### Contacts module & Leads module
+### Entities module
+Implements features
+
+ * Contact
+ * Lead
+ * Opportunity
+ * Account
+
 Graph model to be used to store information about contacts/leads. Where node will be called Entity and relation would still use the same name
 
 Each entity would belong to one of EntityTypes that is a schema for entity validation. Some default entity types should be created. 
@@ -22,13 +29,13 @@ Each entity would belong to one of EntityTypes that is a schema for entity valid
         * id - some machine uuid
         * typeId - entity type used for validation
         * name - human readable entity id
-        * metaData - JSON representing
+        * content - JSON representing content
 
     EntityAudit:
 
         * entityId
         * action - CRUD
-        * origialMeta
+        * originalMeta
 
     RelationType:
 
@@ -44,12 +51,12 @@ Each entity would belong to one of EntityTypes that is a schema for entity valid
         * fromEntity - entityLinked with relationship
         * toEntity - entityLinked with relationship
         * name - human readable Relation id
-        * metaData - JSON representing
+        * content - JSON representing content
 
     RelationAudit:
 
         * RelationId
         * action - CRUD
-        * origialMeta
+        * originalMeta
 
 ## Code structire
