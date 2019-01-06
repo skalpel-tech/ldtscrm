@@ -3,7 +3,7 @@
 Modules
 =======
 
-LDTS CRM Features are organized in modules. 
+LDTS CRM Features are organized in modules.
 Each module is independent and can be activated/deactivated using configuration.
 
 Configuration

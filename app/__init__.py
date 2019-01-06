@@ -71,7 +71,7 @@ def configure_app(app, flask_config_name=None):
 def initialize_modules(app):
     """
     Initializes all application modules
-    
+
     Parameters
     ----------
     app (Flask): The flask application.
