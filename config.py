@@ -6,6 +6,11 @@ class BaseConfig(object):
 
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
+    # ENABLED MODULES
+    MODULES = (
+        'entity',
+    )
+
     # POSTGRESQL
     # DB_USER = 'user'
     # DB_PASSWORD = 'password'

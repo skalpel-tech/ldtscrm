@@ -34,6 +34,8 @@ def create_app(flask_config_name=None, **kwargs):
     from . import extensions
     extensions.init_app(app)
 
+    initialize_modules(app)
+
     log.info('>>>>> Starting development server at http://%s/api/ <<<<<', app.config['SERVER_NAME'])
     return app
 
@@ -65,6 +67,19 @@ def configure_app(app, flask_config_name=None):
             )
             sys.exit(1)
         raise
+
+def initialize_modules(app):
+    """
+    Initializes all application modules
+    
+    Parameters
+    ----------
+    app (Flask): The flask application.
+
+    """
+    from . import modules
+    modules.init_app(app)
+    log.info("all modules are initialized")
 
 def initialize_app(app):
     configure_app(app)
