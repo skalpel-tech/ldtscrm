@@ -8,7 +8,7 @@ Entity content is defined and stored as a json object.
 Entity allow you to manage any object model by its type.
 
 """
-def init_app(app, **kwargs):#pylint: disable=W0613
+def init_app(app):#pylint: disable=W0613
     """
     Loads the entity modules.
 
@@ -17,7 +17,5 @@ def init_app(app, **kwargs):#pylint: disable=W0613
     Parameters
     ----------
     app (Flask): The flask application.
-    **kwargs: Arbitrary keyword arguments.
-
     """
     pass
