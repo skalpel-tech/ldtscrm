@@ -1,4 +1,8 @@
 pytest
 mock
 swagger_spec_validator
-coverage
+
+## Optional packages
+# pytest-xdist
+# pytest-cov
+# coverage
