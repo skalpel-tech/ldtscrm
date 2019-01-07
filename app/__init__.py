@@ -70,7 +70,7 @@ def configure_app(app, flask_config_name=None):
 
 def initialize_core(app):
     """`
-    Initializes all application modules
+    Initializes core application modules
 
     Parameters
     ----------
