@@ -10,7 +10,7 @@ Entity allow you to manage any object model by its type.
 """
 def init_app(app, **kwargs):#pylint: disable=W0613
     """
-    Bootsraps the entity modules.
+    Loads the entity modules.
 
     pylint disable as method does not perform action yet.
 
