@@ -8,9 +8,7 @@ LDTS CRM Core Features are organized in modules.
 Modules
 -------
 
-* Entity => Core model for graph nodes
-* Relationship => Core model for graph edges
-
+* Entity => Entity Management Core Module
 """
 def init_app(app):
     """

@@ -3,16 +3,17 @@
 Entity module
 ============
 
-Entity reprents nodes in the graph model.
-Entity content is defined and stored as a json object.
-Entity allow you to manage any object model by its type.
+Entities are used to model and manage business data
+Entities defines business data using entityType.
+Entities Data Model is dynamic and defined using jsonSchema.
+Business Data is stored in the content field of the entity.
 
 """
 def init_app(app):#pylint: disable=W0613
     """
     Loads the entity modules.
 
-    pylint disable as method does not perform action yet.
+    pylint disable as registration does not perform action yet.
 
     Parameters
     ----------
