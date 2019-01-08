@@ -31,6 +31,8 @@ def create_app(flask_config_name=None, **kwargs):
 
     configure_app(app, flask_config_name)
 
+    initialize_core(app)
+
     from . import extensions
     extensions.init_app(app)
 
@@ -65,6 +67,19 @@ def configure_app(app, flask_config_name=None):
             )
             sys.exit(1)
         raise
+
+def initialize_core(app):
+    """`
+    Initializes core application modules
+
+    Parameters
+    ----------
+    app (Flask): The flask application.
+
+    """
+    from . import core
+    core.init_app(app)
+    log.info("core initialized")
 
 def initialize_app(app):
     configure_app(app)
