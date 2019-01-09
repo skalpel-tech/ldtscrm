@@ -9,8 +9,6 @@ from flask import Flask, Blueprint
 
 from app.api.restplus import api
 
-from app.api.business.contacts.resource import ns as contact_namespace
-
 CONFIG_NAME_MAPPER = {
     'development': 'config.DevelopmentConfig',
     'testing': 'config.TestingConfig',
@@ -71,5 +69,4 @@ def initialize_app(app):
     log.info('initialize app')
     blueprint = Blueprint('api', __name__, url_prefix='/api')
     api.init_app(blueprint)
-    api.add_namespace(contact_namespace)
     app.register_blueprint(blueprint)
