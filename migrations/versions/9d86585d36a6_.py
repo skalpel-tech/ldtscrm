@@ -1,3 +1,4 @@
+# pylint: skip-file
 """empty message
 
 Revision ID: 9d86585d36a6

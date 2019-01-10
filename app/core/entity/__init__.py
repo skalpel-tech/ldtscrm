@@ -9,7 +9,7 @@ Entities Data Model is dynamic and defined using jsonSchema.
 Business Data is stored in the content field of the entity.
 
 """
-from .models import *
+from .models import Entity, EntityType, EntityAudit
 
 def init_app(app):#pylint: disable=W0613
     """

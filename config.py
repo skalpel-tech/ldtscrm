@@ -25,7 +25,9 @@ class BaseConfig(object):
     # DB_NAME = 'oscrm'
     # DB_HOST = 'localhost'
     # DB_PORT = 3306
-    # SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://{user}:{password}@{host}:{port}/{name}'.format(
+    # DB_CONNECTOR = 'mysql+mysqlconnector'
+    # SQLALCHEMY_DATABASE_URI = '{connector}://{user}:{password}@{host}:{port}/{name}'.format(
+    #     connector=DB_CONNECTOR,
     #     user=DB_USER,
     #     password=DB_PASSWORD,
     #     host=DB_HOST,
