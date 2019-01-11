@@ -1,14 +1,13 @@
-# pylint: skip-file
 """empty message
 
-Revision ID: 9d86585d36a6
+Revision ID: 584bde0c29be
 Revises: None
-Create Date: 2019-01-09 18:55:03.220933
+Create Date: 2019-01-10 19:12:38.596925
 
 """
 
 # revision identifiers, used by Alembic.
-revision = '9d86585d36a6'
+revision = '584bde0c29be'
 down_revision = None
 
 from alembic import op
@@ -30,21 +29,21 @@ def upgrade():
     sa.Column('updated', sa.DateTime(), nullable=False),
     sa.Column('id', sa.String(length=60), nullable=False),
     sa.Column('entityId', sa.String(length=60), nullable=False),
-    sa.Column('hrId', sa.String(length=60), nullable=False),
     sa.Column('content', sa.Text(), nullable=False),
     sa.ForeignKeyConstraint(['entityId'], ['entity_type.id'], name=op.f('fk_entity_entityId_entity_type')),
-    sa.ForeignKeyConstraint(['hrId'], ['entity.id'], name=op.f('fk_entity_hrId_entity')),
     sa.PrimaryKeyConstraint('id', name=op.f('pk_entity')),
     sa.UniqueConstraint('id', name=op.f('uq_entity_id'))
     )
     op.create_table('entity_audit',
+    sa.Column('created', sa.DateTime(), nullable=False),
+    sa.Column('updated', sa.DateTime(), nullable=False),
     sa.Column('id', sa.String(length=60), nullable=False),
-    sa.Column('changedEntityId', sa.String(length=60), nullable=False),
+    sa.Column('updatedEntityId', sa.String(length=60), nullable=False),
     sa.Column('action', sa.String(length=20), nullable=False),
     sa.Column('originalEntityContent', sa.Text(), nullable=False),
     sa.Column('changedByEntityId', sa.String(length=60), nullable=False),
     sa.ForeignKeyConstraint(['changedByEntityId'], ['entity.id'], name=op.f('fk_entity_audit_changedByEntityId_entity')),
-    sa.ForeignKeyConstraint(['changedEntityId'], ['entity.id'], name=op.f('fk_entity_audit_changedEntityId_entity')),
+    sa.ForeignKeyConstraint(['updatedEntityId'], ['entity.id'], name=op.f('fk_entity_audit_updatedEntityId_entity')),
     sa.PrimaryKeyConstraint('id', name=op.f('pk_entity_audit')),
     sa.UniqueConstraint('id', name=op.f('uq_entity_audit_id'))
     )

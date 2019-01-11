@@ -1,6 +1,18 @@
+# coding: utf-8
+# -*- coding: utf-8 -*-
+# vim: set fileencoding=utf-8 :
+
 '''
-    File contains DB models for a Entity models
+    Entity Related DB models
+    ========================
+
+    File contains DB models for a Entity module
+
+     - EntityType
+     - Entity
+     - EntityAudit
 '''
+
 import uuid
 
 from app.extensions import db
@@ -8,6 +20,8 @@ from sqlalchemy_utils import Timestamp
 
 
 class EntityType(db.Model, Timestamp):
+    """ **EntityType** db model """
+
     __tablename__ = 'entity_type'
 
     id = db.Column(
@@ -24,6 +38,7 @@ class EntityType(db.Model, Timestamp):
     )
 
 class Entity(db.Model, Timestamp):
+    """ **Entity** db model """
 
     __tablename__ = 'entity'
 
@@ -41,19 +56,14 @@ class Entity(db.Model, Timestamp):
         nullable=False
     )
 
-    hrId = db.Column(
-        db.String(length=60),
-        db.ForeignKey('entity.id'),
-        nullable=False
-    )
-
     content = db.Column(
         db.Text(),
         nullable=False
     )
 
 
-class EntityAudit(db.Model):
+class EntityAudit(db.Model, Timestamp):
+    """ **Entity Audit** db model """
 
     __tablename__ = 'entity_audit'
 
@@ -65,7 +75,7 @@ class EntityAudit(db.Model):
         default=uuid.uuid4().__str__
     )
 
-    changedEntityId = db.Column(
+    updatedEntityId = db.Column(
         db.String(length=60),
         db.ForeignKey('entity.id'),
         nullable=False
