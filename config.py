@@ -20,6 +20,21 @@ class BaseConfig(object):
     #     name=DB_NAME,
     # )
 
+    # DB_USER = 'root'
+    # DB_PASSWORD = 'root'
+    # DB_NAME = 'oscrm'
+    # DB_HOST = 'localhost'
+    # DB_PORT = 3306
+    # DB_CONNECTOR = 'mysql+mysqlconnector'
+    # SQLALCHEMY_DATABASE_URI = '{connector}://{user}:{password}@{host}:{port}/{name}'.format(
+    #     connector=DB_CONNECTOR,
+    #     user=DB_USER,
+    #     password=DB_PASSWORD,
+    #     host=DB_HOST,
+    #     port=DB_PORT,
+    #     name=DB_NAME,
+    # )
+
     # RESTPLUS configuration
     RESTPLUS_SWAGGER_UI_DOC_EXPANSION = 'list'
     RESTPLUS_VALIDATE = True
