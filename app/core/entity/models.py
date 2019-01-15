@@ -50,7 +50,7 @@ class Entity(db.Model, Timestamp):
         default=uuid.uuid4().__str__
     )
 
-    entityId = db.Column(
+    entityTypeId = db.Column(
         db.String(length=60),
         db.ForeignKey('entity_type.id'),
         nullable=False
