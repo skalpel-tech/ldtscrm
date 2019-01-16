@@ -12,7 +12,7 @@ from flask_restplus import fields
 from app.api.restplus import api
 
 
-entity_type = api.model('Entity_Type', {      
+entity_type = api.model('Entity_Type', {
     'name': fields.String(required=True, description='Entity Type Name.', attribute='id'),
     'schema': fields.Raw(required=True, description='Entity Type Json Schema.'),
 })

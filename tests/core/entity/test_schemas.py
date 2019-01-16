@@ -5,8 +5,7 @@ TEST suite for entity schemas
 =============================
 """
 
-import json
-from flask_restplus import marshal, fields, Namespace as ns
+from flask_restplus import marshal
 from app.core.entity.schemas import entity_type
 
 def test_entity_type_schema_empty():
