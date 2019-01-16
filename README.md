@@ -106,6 +106,7 @@ Files:
 * `.remarkrc` - Linter configuration for markdown documents.
 * `.travis.yml` - [Travis CI](https://travis-ci.org/) (automated continuous
   integration) config for automated testing.
+* `bandit.yml` - bandit configuration for codacy code review
 * `CODE_OF_CONDUCT.md` - LDTS CRM API Development Code of Conduct.
 * `CONTRIBUTING.md` - LDTS CRM API contributing guidelines.
 * `config.py` - Configuration file of the LDTS CRM Restful api.
