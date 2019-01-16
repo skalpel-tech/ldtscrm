@@ -26,6 +26,7 @@ For development:
 * install [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/)
 Windows:
 * install [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)
+* create a database, currently tested with [postgres 11](https://www.postgresql.org/download/) and `mysql`
 
 For osx user:
 get the path for virtualenvwrapper.sh
@@ -125,3 +126,11 @@ invoke app.run
 ## Configuration
 
 look at `config.py`
+
+## Unit Test
+
+Install the dependencies
+
+```bash
+pip install -r test/requirements.txt
+```
