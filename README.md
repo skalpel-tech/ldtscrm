@@ -26,6 +26,7 @@ For development:
 * install [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/)
 Windows:
 * install [virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)
+* create a database, currently tested with [postgres 11](https://www.postgresql.org/download/) and `mysql`
 
 For osx user:
 get the path for virtualenvwrapper.sh
@@ -105,6 +106,7 @@ Files:
 * `.remarkrc` - Linter configuration for markdown documents.
 * `.travis.yml` - [Travis CI](https://travis-ci.org/) (automated continuous
   integration) config for automated testing.
+* `bandit.yml` - bandit configuration for codacy code review
 * `CODE_OF_CONDUCT.md` - LDTS CRM API Development Code of Conduct.
 * `CONTRIBUTING.md` - LDTS CRM API contributing guidelines.
 * `config.py` - Configuration file of the LDTS CRM Restful api.
@@ -125,3 +127,11 @@ invoke app.run
 ## Configuration
 
 look at `config.py`
+
+## Unit Test
+
+Install the dependencies
+
+```bash
+pip install -r test/requirements.txt
+```
