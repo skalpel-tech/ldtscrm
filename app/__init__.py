@@ -7,7 +7,7 @@ import os
 import sys
 from flask import Flask, Blueprint
 
-from app.api.restplus import api
+from app.extensions.api.restplus import api
 
 CONFIG_NAME_MAPPER = {
     'development': 'config.DevelopmentConfig',

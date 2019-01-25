@@ -9,7 +9,7 @@ Represents the entity and entity type json schemas to use for api endpoints.
 """
 
 from flask_restplus import fields
-from app.api.restplus import api
+from app.extensions.api.restplus import api
 
 
 entity_type = api.model('Entity_Type', {
