@@ -1,6 +1,5 @@
 import os
 import platform
-import sys
 
 from invoke import Collection, task, run
 from invoke.executor import Executor

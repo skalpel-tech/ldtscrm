@@ -10,6 +10,8 @@ Modules
 
 * Entity => Entity Management Core Module
 """
+
+
 def init_app(app):
     """
     Bootsraps core modules.
@@ -25,5 +27,5 @@ def init_app(app):
 
     for module in (
             entity,
-        ):
+    ):
         module.init_app(app)
