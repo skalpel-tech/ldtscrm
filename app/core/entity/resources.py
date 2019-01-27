@@ -17,7 +17,6 @@ from app.extensions import db
 
 def init_routes():
     bootstrap_entity_type_routes()
-    # bootstrap_entity_routes()
 
 
 def bootstrap_entity_type_routes():
@@ -72,8 +71,3 @@ def bootstrap_entity_type_routes():
         return entity_type.json(), 201
 
 
-# def bootstrap_entity_routes():
-
-    # @blueprint.route('entity/<string:entity_id>', methods=['GET'])
-    # def get_entity_by_id(entity_id):
-    #     return jsonify(Entity.query.get(entity_id))
