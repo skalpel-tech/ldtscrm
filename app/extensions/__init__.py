@@ -22,4 +22,3 @@ def init_app(app):
             db,
     ):
         extension.init_app(app)
-

@@ -13,7 +13,8 @@
      - EntityAudit
 """
 
-import uuid, json
+import uuid
+import json
 
 from app.extensions import db
 from sqlalchemy_utils import Timestamp

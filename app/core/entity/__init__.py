@@ -23,4 +23,4 @@ def init_app(app):
     ----------
     app (Flask): The flask application.
     """
-    init_routes()
+    init_routes(app)
