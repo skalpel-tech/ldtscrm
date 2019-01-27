@@ -53,7 +53,7 @@ def bootstrap_entity_type_routes():
         if not entity_type_name:
             abort(400, description='Entity type "name" not provided')
 
-        entity_type: EntityType = EntityType(
+        entity_type = EntityType(
             schema=entity_schema,
             name=entity_type_name
         )
