@@ -5,6 +5,7 @@ import os
 class BaseConfig(object):
 
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+    SERVER_NAME = "localhost:8888"
 
     # POSTGRESQL
     # DB_USER = 'user'
@@ -44,7 +45,7 @@ class BaseConfig(object):
     # SQLITE
     SQLALCHEMY_DATABASE_URI = 'sqlite:///%s' % (os.path.join(PROJECT_ROOT, "example.db"))
 
-    DEBUG = False
+    DEBUG = True
     ERROR_404_HELP = False
 
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')

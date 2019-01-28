@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "47d6c7fa-b5b8-4490-86b5-9cd2a42561c5",
+		"name": "skpcrm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create entity type FAIL No schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "709d6df3-66fa-49e8-8a96-0cd1e0a5d21d",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"company\"\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create entity type FAIL No name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "709d6df3-66fa-49e8-8a96-0cd1e0a5d21d",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"schema\": \"company\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create entity type FAIL Not json",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "709d6df3-66fa-49e8-8a96-0cd1e0a5d21d",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"schema\": \"{}\",\n\t\"name\": \"company\"\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create entity type SUCCESS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "709d6df3-66fa-49e8-8a96-0cd1e0a5d21d",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).not.eql(null);",
+							"    pm.environment.set(\"entity_type_id\", jsonData.id)",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"schema\": \"{}\",\n\t\"name\": \"company\"\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create entity type SUCCESS FAIL Duplicate name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "709d6df3-66fa-49e8-8a96-0cd1e0a5d21d",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"schema\": \"{}\",\n\t\"name\": \"company\"\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get entity type by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4910698-ea0c-4af2-a80b-e5291209628a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type/{{entity_type_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type",
+						"{{entity_type_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete entity type by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "297f9520-4652-4853-b9a6-6c4a51d91a57",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type/{{entity_type_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type",
+						"{{entity_type_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete entity type by id FAIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "297f9520-4652-4853-b9a6-6c4a51d91a57",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type/{{entity_type_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type",
+						"{{entity_type_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get entity type by id FAIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4910698-ea0c-4af2-a80b-e5291209628a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8888/api/entity-type/{{entity_type_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"entity-type",
+						"{{entity_type_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

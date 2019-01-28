@@ -1,14 +1,14 @@
-# pylint: skip-file
 """empty message
 
-Revision ID: 584bde0c29be
+Revision ID: d513ceb96ef9
 Revises: None
-Create Date: 2019-01-10 19:12:38.596925
+Create Date: 2019-01-27 11:02:08.223998
 
 """
 
+# pylint: skip-file
 # revision identifiers, used by Alembic.
-revision = '584bde0c29be'
+revision = 'd513ceb96ef9'
 down_revision = None
 
 from alembic import op
@@ -21,17 +21,19 @@ def upgrade():
     sa.Column('created', sa.DateTime(), nullable=False),
     sa.Column('updated', sa.DateTime(), nullable=False),
     sa.Column('id', sa.String(length=60), nullable=False),
+    sa.Column('name', sa.String(length=80), nullable=False),
     sa.Column('schema', sa.Text(), nullable=False),
     sa.PrimaryKeyConstraint('id', name=op.f('pk_entity_type')),
-    sa.UniqueConstraint('id', name=op.f('uq_entity_type_id'))
+    sa.UniqueConstraint('id', name=op.f('uq_entity_type_id')),
+    sa.UniqueConstraint('name', name=op.f('uq_entity_type_name'))
     )
     op.create_table('entity',
     sa.Column('created', sa.DateTime(), nullable=False),
     sa.Column('updated', sa.DateTime(), nullable=False),
     sa.Column('id', sa.String(length=60), nullable=False),
-    sa.Column('entityId', sa.String(length=60), nullable=False),
+    sa.Column('entityTypeId', sa.String(length=60), nullable=False),
     sa.Column('content', sa.Text(), nullable=False),
-    sa.ForeignKeyConstraint(['entityId'], ['entity_type.id'], name=op.f('fk_entity_entityId_entity_type')),
+    sa.ForeignKeyConstraint(['entityTypeId'], ['entity_type.id'], name=op.f('fk_entity_entityTypeId_entity_type')),
     sa.PrimaryKeyConstraint('id', name=op.f('pk_entity')),
     sa.UniqueConstraint('id', name=op.f('uq_entity_id'))
     )

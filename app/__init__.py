@@ -9,6 +9,8 @@ from flask import Flask, Blueprint
 
 from app.extensions.api.restplus import api
 
+blueprint = Blueprint('api', __name__, url_prefix='/api')
+
 CONFIG_NAME_MAPPER = {
     'development': 'config.DevelopmentConfig',
     'testing': 'config.TestingConfig',
@@ -20,22 +22,24 @@ logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'lo
 logging.config.fileConfig(logging_conf_path)
 log = logging.getLogger(__name__)
 
+
 def create_app(flask_config_name=None, **kwargs):
     """
     Entry point to the Flask RESTful Server application
     """
     app = Flask(__name__, **kwargs)
+    initialize_core(app)
     initialize_app(app)
 
     configure_app(app, flask_config_name)
 
-    initialize_core(app)
 
     from . import extensions
     extensions.init_app(app)
 
     log.info('>>>>> Starting development server at http://%s/api/ <<<<<', app.config['SERVER_NAME'])
     return app
+
 
 def configure_app(app, flask_config_name=None):
     env_flask_config_name = os.getenv('FLASK_CONFIG')
@@ -66,6 +70,7 @@ def configure_app(app, flask_config_name=None):
             sys.exit(1)
         raise
 
+
 def initialize_core(app):
     """`
     Initializes core application modules
@@ -79,9 +84,9 @@ def initialize_core(app):
     core.init_app(app)
     log.info("core initialized")
 
+
 def initialize_app(app):
     configure_app(app)
     log.info('initialize app')
-    blueprint = Blueprint('api', __name__, url_prefix='/api')
-    api.init_app(blueprint)
+#    api.init_app(blueprint)
     app.register_blueprint(blueprint)

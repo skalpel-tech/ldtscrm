@@ -10,8 +10,10 @@ Business Data is stored in the content field of the entity.
 
 """
 from .models import Entity, EntityType, EntityAudit
+from .resources import init_routes
 
-def init_app(app):#pylint: disable=W0613
+
+def init_app(app):
     """
     Loads the entity modules.
 
@@ -21,4 +23,4 @@ def init_app(app):#pylint: disable=W0613
     ----------
     app (Flask): The flask application.
     """
-    pass
+    init_routes(app)
