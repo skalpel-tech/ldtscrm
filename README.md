@@ -1,4 +1,8 @@
-# LDTS CRM API
+# DISCONTINUED GO TO [BCRM](https://github.com/skalpel-tech/bcrm) 
+
+**FOR ARCHIVE PURPOSES ONLY**
+
+## LDTS CRM API
 
 [![Build Status](https://travis-ci.org/skalpel-tech/ldtscrm.svg?branch=master)](https://travis-ci.org/skalpel-tech/ldtscrm)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd69f740d0d144a79d2cccb023096261)](https://app.codacy.com/app/cedar-technologies/ldtscrm?utm_source=github.com&utm_medium=referral&utm_content=skalpel-tech/ldtscrm&utm_campaign=Badge_Grade_Settings)
